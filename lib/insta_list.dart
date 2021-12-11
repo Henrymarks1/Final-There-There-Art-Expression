@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_insta_clone/comments.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_insta_clone/insta_stories.dart';
 
 class InstaList extends StatefulWidget {
+  // InstaList({Key key, @required this.chatacterInfo}) : super(key: key);
+  // List chatacterInfo;
   @override
   _InstaListState createState() => _InstaListState();
 }
@@ -67,32 +70,23 @@ class _InstaListState extends State<InstaList> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.only(
+                      top: 16.0, right: 16, left: 16, bottom: 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       new Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          new IconButton(
-                            icon: new Icon(isPressed
-                                ? Icons.favorite
-                                : FontAwesomeIcons.heart),
-                            color: isPressed ? Colors.red : Colors.black,
-                            onPressed: () {
-                              setState(() {
-                                isPressed = !isPressed;
-                              });
-                            },
-                          ),
+                          Icon(FontAwesomeIcons.heart),
                           new SizedBox(
-                            width: 16.0,
+                            width: 10,
                           ),
                           new Icon(
                             FontAwesomeIcons.comment,
                           ),
                           new SizedBox(
-                            width: 16.0,
+                            width: 10,
                           ),
                           new Icon(FontAwesomeIcons.paperPlane),
                         ],
@@ -108,36 +102,60 @@ class _InstaListState extends State<InstaList> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      new Container(
-                        height: 40.0,
-                        width: 40.0,
-                        decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                  "https://pbs.twimg.com/profile_images/916384996092448768/PF1TSFOE_400x400.jpg")),
-                        ),
-                      ),
-                      new SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: new TextField(
-                          decoration: new InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Add a comment...",
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Comments(
+                                  comments: [
+                                    {
+                                      "name": "hey",
+                                      "profilePic":
+                                          "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                                      "comment":
+                                          "to Flutter and I am trying to find out how to create a list of objects like below"
+                                    },
+                                    {
+                                      "name": "hey",
+                                      "profilePic":
+                                          "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                                      "comment":
+                                          "to Flutter and I am trying to find out how to create a list of objects like below"
+                                    }
+                                  ],
+                                )),
+                      );
+                    },
+                    child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16.0, 5, 0.0, 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: 'NYT',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black)),
+                                  TextSpan(text: " "),
+                                  TextSpan(
+                                      text: 'yo whats up bro',
+                                      style: TextStyle(color: Colors.black)),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "View all 6 comments",
+                              style: TextStyle(color: Colors.grey[500]),
+                            )
+                          ],
+                        ))),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child:

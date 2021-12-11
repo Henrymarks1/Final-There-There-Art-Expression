@@ -1,13 +1,14 @@
 name: flutter_insta_clone
 description: A new Flutter project.
-
+environment:
+  sdk: ">=2.7.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons:
   font_awesome_flutter:
 
 dev_dependencies:
