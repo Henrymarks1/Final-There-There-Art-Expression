@@ -3,9 +3,11 @@ import 'package:flutter_insta_clone/comments.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_insta_clone/insta_stories.dart';
 
+import 'character_info.dart';
+
 class InstaList extends StatefulWidget {
-  // InstaList({Key key, @required this.chatacterInfo}) : super(key: key);
-  // List chatacterInfo;
+  InstaList({Key key, @required this.chatacterInfo}) : super(key: key);
+  List<CharacterInfo> chatacterInfo;
   @override
   _InstaListState createState() => _InstaListState();
 }
@@ -15,154 +17,139 @@ class _InstaListState extends State<InstaList> {
 
   @override
   Widget build(BuildContext context) {
-    var deviceSize = MediaQuery.of(context).size;
     return ListView.builder(
-      itemCount: 5,
-      itemBuilder: (context, index) => index == 0
-          ? new SizedBox(
-              child: new InstaStories(),
-              height: deviceSize.height * 0.15,
-            )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+      itemCount: widget.chatacterInfo.length,
+      itemBuilder: (context, index) =>
+          // index == 0
+          //     ? new SizedBox(
+          //         child: new InstaStories(),
+          //         height: deviceSize.height * 0.15,
+          //       )
+          //     :
+          Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          new Container(
-                            height: 40.0,
-                            width: 40.0,
-                            decoration: new BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: new NetworkImage(
-                                      "https://pbs.twimg.com/profile_images/916384996092448768/PF1TSFOE_400x400.jpg")),
-                            ),
-                          ),
-                          new SizedBox(
-                            width: 10.0,
-                          ),
-                          new Text(
-                            "imthpk",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )
-                        ],
+                Row(
+                  children: <Widget>[
+                    new Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                            fit: BoxFit.fill,
+                            image: new NetworkImage(
+                                widget.chatacterInfo[index].profilePic)),
                       ),
-                      new IconButton(
-                        icon: Icon(Icons.more_vert),
-                        onPressed: null,
-                      )
-                    ],
-                  ),
+                    ),
+                    new SizedBox(
+                      width: 10.0,
+                    ),
+                    new Text(
+                      widget.chatacterInfo[index].name,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )
+                  ],
                 ),
-                Flexible(
-                  fit: FlexFit.loose,
-                  child: new Image.network(
-                    "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      top: 16.0, right: 16, left: 16, bottom: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      new Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Icon(FontAwesomeIcons.heart),
-                          new SizedBox(
-                            width: 10,
-                          ),
-                          new Icon(
-                            FontAwesomeIcons.comment,
-                          ),
-                          new SizedBox(
-                            width: 10,
-                          ),
-                          new Icon(FontAwesomeIcons.paperPlane),
-                        ],
-                      ),
-                      new Icon(FontAwesomeIcons.bookmark)
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Text(
-                    "Liked by pawankumar, pk and 528,331 others",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Comments(
-                                  comments: [
-                                    {
-                                      "name": "hey",
-                                      "profilePic":
-                                          "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                                      "comment":
-                                          "to Flutter and I am trying to find out how to create a list of objects like below"
-                                    },
-                                    {
-                                      "name": "hey",
-                                      "profilePic":
-                                          "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                                      "comment":
-                                          "to Flutter and I am trying to find out how to create a list of objects like below"
-                                    }
-                                  ],
-                                )),
-                      );
-                    },
-                    child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16.0, 5, 0.0, 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: 'NYT',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.black)),
-                                  TextSpan(text: " "),
-                                  TextSpan(
-                                      text: 'yo whats up bro',
-                                      style: TextStyle(color: Colors.black)),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "View all 6 comments",
-                              style: TextStyle(color: Colors.grey[500]),
-                            )
-                          ],
-                        ))),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child:
-                      Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
+                new IconButton(
+                  icon: Icon(Icons.more_vert),
+                  onPressed: null,
                 )
               ],
             ),
+          ),
+          Flexible(
+            fit: FlexFit.loose,
+            child: new Image.network(
+              widget.chatacterInfo[index].image,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 16.0, right: 16, left: 16, bottom: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Icon(FontAwesomeIcons.heart),
+                    new SizedBox(
+                      width: 10,
+                    ),
+                    new Icon(
+                      FontAwesomeIcons.comment,
+                    ),
+                    new SizedBox(
+                      width: 10,
+                    ),
+                    new Icon(FontAwesomeIcons.paperPlane),
+                  ],
+                ),
+                new Icon(FontAwesomeIcons.bookmark)
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              widget.chatacterInfo[index].likers,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Comments(
+                          comments: widget.chatacterInfo[index].comments)),
+                );
+              },
+              child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16.0, 5, 0.0, 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: widget.chatacterInfo[index].name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black)),
+                            TextSpan(text: " "),
+                            TextSpan(
+                                text: widget.chatacterInfo[index].comments[0]
+                                    ["comment"],
+                                style: TextStyle(color: Colors.black)),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "View all ${widget.chatacterInfo[index].comments.length} comments",
+                        style: TextStyle(color: Colors.grey[500]),
+                      )
+                    ],
+                  ))),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
+          )
+        ],
+      ),
     );
   }
 }

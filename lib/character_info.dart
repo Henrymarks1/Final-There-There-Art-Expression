@@ -2,9 +2,8 @@ class CharacterInfo {
   String name;
   String profilePic;
   String image;
-  List<String> likers;
-  int number;
-  List<Map> comments;
+  String likers;
+  List comments;
   CharacterInfo(
-      {this.name, this.profilePic, this.image, this.number, this.comments});
+      {this.name, this.profilePic, this.image, this.likers, this.comments});
 }
