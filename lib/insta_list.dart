@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_insta_clone/comments.dart';
+import 'package:therestagram/comments.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_insta_clone/insta_stories.dart';
+import 'package:therestagram/insta_stories.dart';
 
 import 'character_info.dart';
 

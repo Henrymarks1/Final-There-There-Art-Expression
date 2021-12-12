@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_insta_clone/character_info.dart';
-import 'package:flutter_insta_clone/insta_list.dart';
+import 'package:therestagram/character_info.dart';
+import 'package:therestagram/insta_list.dart';
 
 class InstaBody extends StatelessWidget {
   @override
