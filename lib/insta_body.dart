@@ -36,6 +36,12 @@ class InstaBody extends StatelessWidget {
           likers: "Liked by opalbearsheild, lony, and 6 others",
           comments: [
             {
+              "name": "orvil_red_feather49",
+              "profilePic":
+                  "https://media.gettyimages.com/photos/three-teenage-boys-on-lowrider-bicycles-with-murals-on-wall-picture-id200568351-001?s=2048x2048",
+              "comment": "I love the drums"
+            },
+            {
               "name": "opalbearsheild",
               "profilePic":
                   "https://dornsife.usc.edu/assets/img/news/story/2836.jpg",
