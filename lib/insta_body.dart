@@ -74,6 +74,54 @@ class InstaBody extends StatelessWidget {
                   "https://media.gettyimages.com/photos/three-teenage-boys-on-lowrider-bicycles-with-murals-on-wall-picture-id200568351-001?s=2048x2048",
               "comment": "this is cool, can you interview me too"
             }
+          ]),
+      CharacterInfo(
+          name: "Jackie_Red_Feather",
+          profilePic:
+              "https://wallpaperboat.com/wp-content/uploads/2019/06/black-screen-02-920x518.jpg",
+          image: "assets/images/depression.jpg",
+          likers: "Liked by Harvey, Opal, and 13 others",
+          comments: [
+            {
+              "name": "Jackie_Red_Feather",
+              "profilePic":
+                  "https://ipt.imgix.net/206729/x/0/beginner-s-guide-to-types-of-cameras-for-digital-photography-3.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883",
+              "comment": 'I am finally returning',
+            },
+            {
+              "name": "harvey",
+              "profilePic":
+                  "https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/31739905_2061371083892021_7673197384859385856_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=83vTzIg66TgAX9v9TrR&_nc_ht=scontent-lax3-2.xx&oh=c53e782f3e5e119b9db24cd959682196&oe=61DC4BCA",
+              "comment": 'I hope we can move past our differences'
+            },
+            {
+              "name": "opalbearsheild",
+              "profilePic":
+                  "https://media.gettyimages.com/photos/three-teenage-boys-on-lowrider-bicycles-with-murals-on-wall-picture-id200568351-001?s=2048x2048",
+              "comment": "you are welcome here"
+            }
+          ]),
+      CharacterInfo(
+          name: "karen",
+          profilePic:
+              "https://media.istockphoto.com/photos/mother-and-son-laughing-in-the-park-picture-id487374270?k=20&m=487374270&s=612x612&w=0&h=w6jJAeH2Lg1E3hzRYX95yDe_59lK7n_4Stzuxl_GZ7c=",
+          image:
+              "https://www.mercurynews.com/wp-content/uploads/2016/08/20160126__p_92df225b-55bb-4326-b76d-65d32481a8b6lsoriginalph.jpg?w=480",
+          likers: "Liked by blue, billD, and 5 others",
+          comments: [
+            {
+              "name": "karen",
+              "profilePic":
+                  "https://media.istockphoto.com/photos/mother-and-son-laughing-in-the-park-picture-id487374270?k=20&m=487374270&s=612x612&w=0&h=w6jJAeH2Lg1E3hzRYX95yDe_59lK7n_4Stzuxl_GZ7c=",
+              "comment":
+                  "Bill Davis can't drive Edwin to the powwow, can anyone else take him",
+            },
+            {
+              "name": "blue",
+              "profilePic":
+                  "https://upload.wikimedia.org/wikipedia/commons/3/34/Untitled_blue_monochrome.png",
+              "comment": 'i can'
+            },
           ])
     ];
     return new Column(

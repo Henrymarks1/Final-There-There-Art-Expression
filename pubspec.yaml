@@ -31,6 +31,7 @@ flutter:
   assets:
    - assets/images/insta_logo.png
    - assets/images/dene.png
+   - assets/images/depression.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
