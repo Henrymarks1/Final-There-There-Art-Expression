@@ -67,10 +67,12 @@ class _InstaListState extends State<InstaList> {
           ),
           Flexible(
             fit: FlexFit.loose,
-            child: new Image.network(
-              widget.chatacterInfo[index].image,
-              fit: BoxFit.cover,
-            ),
+            child: widget.chatacterInfo[index].image.substring(0, 1) == "h"
+                ? Image.network(
+                    widget.chatacterInfo[index].image,
+                    fit: BoxFit.cover,
+                  )
+                : Image.asset(widget.chatacterInfo[index].image),
           ),
           Padding(
             padding: const EdgeInsets.only(
